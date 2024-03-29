@@ -9,7 +9,8 @@ export default function Budget({ budget }){
     return (
         <div>
             <Link to={`/budget/${id}`}>
-                <h1>{budget.category}</h1>
+                <h1>{budget.type}</h1>
+                <h1>{budget.amount}</h1>
             </Link>
         </div>
         )

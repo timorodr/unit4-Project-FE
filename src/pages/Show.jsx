@@ -1,10 +1,13 @@
-// Import our Budget Component
+import { Link, useLoaderData } from 'react-router-dom'
 
 export default function Show(props) {
+    const aTransaction = useLoaderData()
 
     return (
-        <>
-            <h1>Show</h1>
-        </>
+        <div>
+            <h1>{aTransaction.category}</h1>
+            <h1>{aTransaction.date}</h1>
+            <h1>{aTransaction.note}</h1>
+        </div>
     )
 }
