@@ -29,7 +29,10 @@ Working in a nursing home I noticed how important financial literacy is to resid
 ![My ERD](https://i.imgur.com/JoU70x2.png)
 
 ## User Interface Mockups
-Index Page
+
+### Index
 ![Index](https://i.imgur.com/GFnhrgN.png)
-Show
+
+
+### Show
 ![Show](https://i.imgur.com/zmQCkCr.png)
