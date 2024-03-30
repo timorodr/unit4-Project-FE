@@ -1,8 +1,18 @@
 import Budget from "../components/Budget"
 import { useLoaderData, Form } from "react-router-dom"
+import Button from '@mui/material/Button';
+import * as React from 'react';
+
+// import { BarChart } from '@mui/x-charts/BarChart';
+import PieChartStuff from "../components/PieChart";
+import PieChart from '@mui/x-charts/PieChart';
 
 export default function Index(props) {
     const allTransactions = useLoaderData()
+    // allTransactions.map((item, i) => <Budget budget={item}/>)
+    console.log(allTransactions[0].amount)
+    allTransactions.map((money, i) => money)
+   
 
     return (
         <>
@@ -23,10 +33,15 @@ export default function Index(props) {
                 <label htmlFor="note">
                     <input type="text" name="note" id="note" placeholder="Add a note"/>
                 </label>
-                <button>Add Income or Expense</button>
+                <Button variant="contained" type="submit">Add Income or Expense</Button>
             </Form>
+            
             <br />
             {allTransactions.map((transaction, i) => <Budget budget={transaction} key={i}/>)}
+
+   
+            <PieChartStuff/>
+            
         </>
     )
 }
