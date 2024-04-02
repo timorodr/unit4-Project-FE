@@ -76,21 +76,25 @@ export default function Index(props) {
             <br />
 
             <h2>Income Table</h2>
-
+            {/* <Budget/> */}
+            {/* <Budget budget={allTransactions}/> */}
             {/* <Budget transactions={incomeTransactions} budget="Income"/> */}
-            {allTransactions.map((transactions, i) => (
+            {/* {allTransactions.map((transactions, i) => (
                 transactions.type === "Income" ? (
                     <Budget budget={transactions} transactions="Income" key={i}/>
                 ) : null 
-            ))}
-            {/* {allTransactions.map((transaction, i) => <Budget budget={transaction} transactions="Income" key={i}/>).filter(x => props.transactions === "Income")} */}
+            ))} */}
+            {/* {allTransactions.filter(transactions => transactions.type === "Income") ? 
+                (<Budget budget={transactions} transactions="Income" />
+            ) : null} */}
+            {/* {allTransactions.map((transaction, i) => <Budget budget={transaction} transactions="Income" key={i}/>)} */}
             {/* <TransactionTable transactions={incomeTransactions} budget="Income"/> */}
             {/* {incomeTable} */}
             <h2>Expense Table</h2>
             {allTransactions.map((transactions, i) => (
                 transactions.type === "Expense" ? (
-                    <Budget budget={transactions} transactions="Expense" key={i}/>
-                ) : null 
+                    <Budget budget={transactions} key={i}/>
+                ) : null
             ))}
             {/* <Budget budget={expenseTransactions}/> */}
             {/* {filteredTransactions.map((transaction, i) => <TransactionTable transactions={expenseTransactions} budget="Expense" />)} */}
