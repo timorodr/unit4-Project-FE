@@ -73,14 +73,19 @@
 import React from 'react';
 import { useLoaderData, Link } from "react-router-dom"
 
-function TransactionTable({ transactions, budget }) {
+function TransactionTable({ transactions, budget, indie }) {
   const allTransactions = useLoaderData()
+  // console.log(allTransactions)
   const filteredTransactions = allTransactions.filter((transaction) => budget === transaction.type)
-
+  // const id = allTransactions
   // ** Cont to find way to access id of url 
-  const id = allTransactions.find((transaction) => transaction.url)
-  console.log(id)
-  
+  // const id = indie
+  // console.log(id)
+  // for(let i = 0; i < id.length; i++){
+  //   let y = id[i]
+  //   return y
+  // }
+
   return (
     <table>
       <thead>
@@ -92,24 +97,24 @@ function TransactionTable({ transactions, budget }) {
           <th>Note</th>
         </tr>
       </thead>
-      {/* <Link to={`/budget/${id}`}> */}
-        <tbody>
-          {filteredTransactions.map((transaction) => (
+      <tbody>
+        {filteredTransactions.map((transaction, id) => (
+          // <Link to={`/budget/${id}`}>
             <tr key={transaction.id}> 
-            
-              <td>{transaction.type}</td>
-              <td>{transaction.category}</td>
-              <td>{transaction.amount}</td>
-              <td>{transaction.date}</td>
-              <td>{transaction.note}</td>
-            </tr>
-          ))}
+          
+            <td>{transaction.type}</td>
+            <td>{transaction.category}</td>
+            <td>{transaction.amount}</td>
+            <td>{transaction.date}</td>
+            <td>{transaction.note}</td>
+          </tr>
+        // </Link>
+        ))}
         </tbody>
-      {/* </Link> */}
     </table>
   );
 }
 
-// {allTransactions.map((transaction, i) => <Budget budget={transaction} key={i}/>)}
+
 
 export default TransactionTable;

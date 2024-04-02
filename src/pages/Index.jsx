@@ -1,4 +1,4 @@
-// import Budget from "../components/Budget"
+import Budget from "../components/Budget"
 import { useLoaderData, Form } from "react-router-dom"
 import Button from '@mui/material/Button';
 import React, {useEffect, useState} from 'react'
@@ -8,21 +8,25 @@ import DataTable from "../components/Table";
 import DoughnutChart from "../components/PieChart";
 import Chart from 'chart.js/auto';
 // import * as React from 'react';
-import TransactionTable from "../components/Table";
+// import TransactionTable from "../components/Table";
 
 // import { BarChart } from '@mui/x-charts/BarChart';
 // import PieChartStuff from "../components/PieChart";
 // import PieChart from '@mui/x-charts/PieChart';
 
 export default function Index(props) {
-    // const allTransactions = useLoaderData()
-    // console.log(allTransactions)
+    const allTransactions = useLoaderData()
+    console.log(allTransactions)
     
 
 
+    const [transactions, setTransactions] = useState([])
     const [incomeTransactions, setIncomeTransactions] = useState([])
     const [expenseTransactions, setExpenseTransactions] = useState([])
 
+    // const incomeTransactions2 = allTransactions.filter((t) => t.type === "Income");
+    // const expenseTransactions2 = allTransactions.filter((t) => t.type === "Expense");
+    // const filteredTransactions = allTransactions.filter((transaction) => props.budget === transaction.type)
     // useEffect(() => {
     //     const fetchData = async () => {
     //         const allTransactions = await useLoaderData()
@@ -72,12 +76,26 @@ export default function Index(props) {
             <br />
 
             <h2>Income Table</h2>
-            <TransactionTable transactions={incomeTransactions} budget="Income"/>
+
+            {/* <Budget transactions={incomeTransactions} budget="Income"/> */}
+            {allTransactions.map((transactions, i) => (
+                transactions.type === "Income" ? (
+                    <Budget budget={transactions} transactions="Income" key={i}/>
+                ) : null 
+            ))}
+            {/* {allTransactions.map((transaction, i) => <Budget budget={transaction} transactions="Income" key={i}/>).filter(x => props.transactions === "Income")} */}
+            {/* <TransactionTable transactions={incomeTransactions} budget="Income"/> */}
             {/* {incomeTable} */}
             <h2>Expense Table</h2>
-            <TransactionTable transactions={expenseTransactions} budget="Expense"/>
+            {allTransactions.map((transactions, i) => (
+                transactions.type === "Expense" ? (
+                    <Budget budget={transactions} transactions="Expense" key={i}/>
+                ) : null 
+            ))}
+            {/* <Budget budget={expenseTransactions}/> */}
+            {/* {filteredTransactions.map((transaction, i) => <TransactionTable transactions={expenseTransactions} budget="Expense" />)} */}
 
-                {/* {allTransactions.map((transaction, i) => <Budget budget={transaction} key={i}/>)} */}
+            {/* {allTransactions.map((transactions, i) => <Budget budget={transactions} transactions="Expense" key={i}/>)} */}
 
    
 
