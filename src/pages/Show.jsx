@@ -75,7 +75,7 @@ export default function Show(props) {
             <br />
 
             <Form action={`/delete/${id}/`} method="POST">
-                <Button variant='contained' style={{background: "red", padding: 10}}>Delete Transaction</Button>
+                <Button variant='contained' style={{background: "red", padding: 10}} type="submit">Delete Transaction</Button>
             </Form>
             <br />
             <br />
