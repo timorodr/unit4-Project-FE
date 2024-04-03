@@ -73,7 +73,7 @@ export default function Index(props) {
                 <label htmlFor="note">
                     <input type="text" name="note" id="note" placeholder="Add a note"/>
                 </label>
-                <Button variant="contained" type="submit">Add Income or Expense</Button>
+                <Button variant="contained" type="submit" style={{background: "green"}}>Add Income or Expense</Button>
             </Form>
             
             <br />
