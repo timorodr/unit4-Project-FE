@@ -70,13 +70,50 @@
 //     </TableContainer>
 //   );
 // }
-import React from 'react';
-import { useLoaderData, Link } from "react-router-dom"
 
-function TransactionTable({ transactions, budget, indie }) {
-  const allTransactions = useLoaderData()
+import { useLoaderData, Link } from "react-router-dom"
+import * as React from 'react';
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
+import { MdArrowOutward } from "react-icons/md";
+
+
+const columns = [
+  { id: 'Type', label: 'Type', minWidth: 170 },
+  { id: 'Category', label: 'Category', minWidth: 100 },
+  {
+    id: 'Amount',
+    label: 'Amount',
+    minWidth: 170,
+    align: 'right',
+  //   format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'Date',
+    label: 'Date',
+    minWidth: 170,
+    align: 'right',
+  //   format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'Note',
+    label: 'Note',
+    minWidth: 170,
+    align: 'right',
+  //   format: (value) => value.toFixed(2),
+  },
+];
+
+function TransactionTableHeader({ transactions, budget, indie }) {
+  // const allTransactions = useLoaderData()
   // console.log(allTransactions)
-  const filteredTransactions = allTransactions.filter((transaction) => budget === transaction.type)
+  // const filteredTransactions = allTransactions.filter((transaction) => budget === transaction.type)
   // const id = allTransactions
   // ** Cont to find way to access id of url 
   // const id = indie
@@ -87,34 +124,75 @@ function TransactionTable({ transactions, budget, indie }) {
   // }
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Category</th>
-          <th>Amount</th>
-          <th>Date</th>
-          <th>Note</th>
-        </tr>
-      </thead>
-      <tbody>
-        {filteredTransactions.map((transaction, id) => (
-          // <Link to={`/budget/${id}`}>
-            <tr key={transaction.id}> 
+        <Paper sx={{ width: '100%', overflow: "hidden"}}>
+            <TableHead>
+                <TableRow style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <TableCell
+                  // key={columns.id}
+                  // align={{ align: "right" }}
+                  style={{ minWidth: columns[0].minWidth }}
+                  >
+                <th>Type</th>
+                </TableCell>
+                <TableCell
+                  // key={columns.id}
+                  // align={columns.align}
+                  style={{ minWidth: columns[1].minWidth}}
+                  >
+                <th>Category</th>
+                </TableCell>
+                <TableCell
+                  // key={columns.id}
+                  align={columns[2].align}
+                  style={{ minWidth: columns[2].minWidth }}
+                  >
+                <th>Amount</th>
+                </TableCell>
+                <TableCell
+                  // key={columns.id}
+                  // align={columns[3].align}
+                  style={{ minWidth: columns[3].minWidth}}
+                  >
+                <th>Date</th>
+                </TableCell>
+                <TableCell
+                  // key={columns.id}
+                  // align={columns[4].align}
+                  style={{ minWidth: columns[4].minWidth}}
+                  >
+                <th>Note</th>
+                </TableCell>
+            </TableRow>
+          </TableHead>
+          </Paper>
+    // <table>
+    //   <thead>
+    //     <tr>
+    //       <th>Type</th>
+    //       <th>Category</th>
+    //       <th>Amount</th>
+    //       <th>Date</th>
+    //       <th>Note</th>
+    //     </tr>
+    //   </thead>
+    //   <tbody>
+    //     {filteredTransactions.map((transaction, id) => (
+    //       // <Link to={`/budget/${id}`}>
+    //         <tr key={transaction.id}> 
           
-            <td>{transaction.type}</td>
-            <td>{transaction.category}</td>
-            <td>{transaction.amount}</td>
-            <td>{transaction.date}</td>
-            <td>{transaction.note}</td>
-          </tr>
-        // </Link>
-        ))}
-        </tbody>
-    </table>
+    //         <td>{transaction.type}</td>
+    //         <td>{transaction.category}</td>
+    //         <td>{transaction.amount}</td>
+    //         <td>{transaction.date}</td>
+    //         <td>{transaction.note}</td>
+    //       </tr>
+    //     // </Link>
+    //     ))}
+    //     </tbody>
+    // </table>
   );
 }
 
 
 
-export default TransactionTable;
+export default TransactionTableHeader;
