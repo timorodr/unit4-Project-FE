@@ -2,9 +2,15 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
-
+/* 
+#show {
+  width: 680px;
+  margin: 0 auto;
+  padding: 2rem;
+} */
+/* 
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -40,3 +46,7 @@
 .read-the-docs {
   color: #888;
 }
+
+.tableLink {
+  width: 100%
+} */
