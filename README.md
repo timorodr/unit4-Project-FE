@@ -6,7 +6,7 @@
 | Project Name | Easy Money |
 | Description | Easy Money is a budgeting app tracking income and expenses to help promote financial literacy. |
 | Developers | Timothy Rodriguez |
-| Live Website | [https://unit4-be.onrender.com](https://monumental-pika-4910d7.netlify.app/) |
+| Live Website | https://monumental-pika-4910d7.netlify.app/ |
 | Repo | https://github.com/timorodr/unit4-BE |
 
 ## Problem Being Solved and Target Market
