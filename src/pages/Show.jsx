@@ -17,22 +17,22 @@ export default function Show(props) {
 
     return (
         <div style={{textAlign: "center"}} id='show'>
-            <h1>${aTransaction.amount}</h1>
-            <h2>{aTransaction.date}</h2>
+            <h1 className='transaction-amount'>${aTransaction.amount}</h1>
+            <h2 className='transaction-date'>{aTransaction.date}</h2>
             
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', width: 1047 }}>
+            <div className="transaction-details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', width: 1047 }}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span>Type:</span>
+                <span className='transaction-label'>Type:</span>
                 <span>{aTransaction.type}</span>
                 
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span>Category:</span>
+                <span className='transaction-label'>Category:</span>
                 <span>{aTransaction.category}</span>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span>Note:</span>
+                <span className='transaction-label'>Note:</span>
                 <span>{aTransaction.note}</span>
                 </div>
             </div>

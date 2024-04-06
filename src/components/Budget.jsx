@@ -157,7 +157,7 @@ export default function Budget({ budget }){
                                       <td>{budget.category}</td>
                               </TableCell>
                               <TableCell align={columns[2].align} style={{ minWidth: columns[2].minWidth }}>
-                                      <td>{budget.amount}</td>
+                                      <td>${budget.amount}</td>
                               </TableCell>
                               <TableCell align={columns[3].align}
                                     style={{ minWidth: columns[3].minWidth }}>

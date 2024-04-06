@@ -22,9 +22,9 @@ export default function Index(props) {
     
 
 
-    const [transactions, setTransactions] = useState([])
-    const [incomeTransactions, setIncomeTransactions] = useState([])
-    const [expenseTransactions, setExpenseTransactions] = useState([])
+    // const [transactions, setTransactions] = useState([])
+    // const [incomeTransactions, setIncomeTransactions] = useState([])
+    // const [expenseTransactions, setExpenseTransactions] = useState([])
 
     // const incomeTransactions2 = allTransactions.filter((t) => t.type === "Income");
     // const expenseTransactions2 = allTransactions.filter((t) => t.type === "Expense");
@@ -56,10 +56,15 @@ export default function Index(props) {
     return (
         <>
             {/* <DoughnutChart/> */}
-            <h1>Add an Expense</h1>
+            <h1 className="app-title">EasyMoney</h1>
+            <h1>Start Tracking</h1>
             <Form action="/create" method="POST">
                 <label htmlFor="type">
-                    <input type="text" name="type" id="type" placeholder="Expense or Income"/>
+                    <select name="type" id="type">
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                    </select>
+                    {/* <input type="text" name="type" id="type" placeholder="Expense or Income"/> */}
                 </label>
                 <label htmlFor="category">
                     <input type="text" name="category" id="category" placeholder="category"/>
